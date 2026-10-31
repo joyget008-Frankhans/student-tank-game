@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111a24">
+    <title>日本程序員的一天</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Tank Day">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span data-i18n="brand">坦克日誌</span>
+        </a>
+        <button class="language-button" id="language-button" type="button" aria-label="切換語言">
+          <span aria-hidden="true">文 / あ / EN</span>
+          <span data-i18n="language">繁體中文</span>
+        </button>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow">東京 · 開發者的休息時間</p>
+        <h1 data-i18n="title">日本程序員的一天</h1>
+        <p class="subtitle" data-i18n="subtitle">寫完程式，開一台坦克去兜風吧。</p>
+      </section>
+
+      <section class="game-panel" aria-label="坦克遊戲">
+        <div class="game-toolbar">
+          <div class="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="status">戰場進行中</span>
+          </div>
+          <div class="game-stats">
+            <div class="score"><span data-i18n="score">擊破</span> <strong id="score">0</strong></div>
+            <div class="score"><span data-i18n="cheatSheets">小抄</span> <strong id="cheats">0/20</strong></div>
+          </div>
+        </div>
+        <div class="arena-wrap">
+          <canvas id="arena" aria-label="坦克戰場"></canvas>
+          <div class="arena-hint" id="arena-hint" data-i18n="hint">WASD / 方向鍵移動 · 空白鍵射擊</div>
+          <section class="game-over" id="game-over" aria-labelledby="game-over-title" hidden>
+            <div class="game-over-card">
+              <p class="game-over-kicker" data-i18n="gameOverKicker">這回合結束了</p>
+              <h2 id="game-over-title" data-i18n="gameOverTitle">別擔心，還有選擇！</h2>
+              <p data-i18n="gameOverText">再試一次，或把煩惱變成像素。</p>
+              <div class="game-over-actions">
+                <button class="retry-button" id="retry-button" type="button" data-i18n="retry">再試驗（+1 生命）</button>
+                <button class="pixel-ending-button" id="pixel-ending-button" type="button" data-i18n="pixelEnding">把煩惱變成像素</button>
+              </div>
+            </div>
+          </section>
+          <button class="ending-restart-button" id="ending-restart-button" type="button" data-i18n="restart" hidden>再來一盤</button>
+        </div>
+        <div class="game-footer">
+          <span data-i18n="mission">任務：收集 20 張小抄</span>
+          <span class="health"><span aria-hidden="true">♥</span> <span id="health">3</span></span>
+        </div>
+      </section>
+
+      <div class="restart-row">
+        <button class="restart-button" id="restart-button" type="button" data-i18n="restart" hidden>重新開始</button>
+      </div>
+
+      <section class="actions">
+        <p class="action-copy" data-i18n="actionCopy">忙了一整天，來點補給吧？</p>
+        <button class="hungry-button" id="hungry-button" type="button" data-i18n="hungryButton">呼叫拉麵補給</button>
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <nav class="touch-controls" aria-label="遊戲操作">
+        <div class="direction-pad">
+          <button type="button" data-move="up" aria-label="向上">▲</button>
+          <div>
+            <button type="button" data-move="left" aria-label="向左">◀</button>
+            <button type="button" data-move="down" aria-label="向下">▼</button>
+            <button type="button" data-move="right" aria-label="向右">▶</button>
+          </div>
+        </div>
+        <button class="fire-button" id="fire-button" type="button" data-i18n="fire">開火</button>
+      </nav>
+
+      <footer class="page-footer" data-i18n="footer">小心敵方坦克，祝你在東京戰場玩得開心。</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
